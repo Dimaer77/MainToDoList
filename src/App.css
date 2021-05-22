@@ -6,3 +6,17 @@
 .App > div {
   margin-right: 50px;
 }
+
+
+.is-done{
+  opacity: 0.5;
+}
+
+.active-filter{
+  background-color: aquamarine;
+}
+
+.error{
+  border: 2px red solid ;
+  outline: none;
+}
