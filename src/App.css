@@ -1,18 +1,35 @@
-.App {
-  padding: 30px;
-  display: flex;
-}
 
-.App > div {
-  margin-right: 50px;
-}
-.error{
-  border: red 2px solid;
-}
+/*.App {*/
+/*  background-color: #a9d0f0;*/
+/*  padding: 30px;*/
+/*  display: flex;*/
+/*}*/
+
+/*.App > div {*/
+/*  margin-right: 50px;*/
+/*}*/
+/*.error{*/
+/*  border: red 2px solid;*/
+/*}*/
 .in:focus{
 outline: none;
 }
-
-.active-filter{
-  background-color: cornflowerblue;
+.is-done {
+  opacity: 0.5;
 }
+
+/*.active-filter{*/
+/*  background-color: cornflowerblue;*/
+/*}*/
+/*li{*/
+/*  list-style: none;*/
+/*}*/
+/*IconButton Delete{*/
+/*  padding: 0px;*/
+/*}*/
+/*ul{*/
+/*  padding: 0;*/
+/*}*/
+/*h3{*/
+/*  margin: 0;*/
+/*}*/

@@ -3,6 +3,8 @@ import "./App.css"
 import {FilterValueType, TasksType} from "./App";
 import {AddItemForm} from "./AddItemForm";
 import {EditableSpan} from "./EditableSpan";
+import {Button, Checkbox, IconButton} from "@material-ui/core";
+import {Delete} from "@material-ui/icons";
 
 
 type PropsTodoListType = {
@@ -34,15 +36,18 @@ function TodoList(props: PropsTodoListType) {
         return (
 
             <li key={task.id} className={task.isDone ? "is-done" : ""}>
-                <input
-                    type="checkbox"
+                <Checkbox
+                    color={"primary"}
+                    size={"small"}
                     checked={task.isDone}
                     onChange={onChangeTaskStatus}
                 />
                 <EditableSpan title={task.title}
                               changeTitle={changeTaskTitle}
                 />
-                <button onClick={removeTask}>X</button>
+                <IconButton color={"secondary"} style={{padding: "5px 0px"}} onClick={removeTask}>
+                    <Delete/>
+                </IconButton>
             </li>
 
         )
@@ -68,7 +73,10 @@ function TodoList(props: PropsTodoListType) {
         <div>
             <h3>
                 <EditableSpan title={props.title} changeTitle={changeTodoListTitle}/>
-                <button onClick={() => props.removeTodoList(props.todoListID)}>X</button>
+                <IconButton color={"secondary"} onClick={() => props.removeTodoList(props.todoListID)}>
+                    <Delete/>
+                </IconButton>
+                {/*<button >X</button>*/}
             </h3>
             <AddItemForm addItem={addTask}/>
             {/*<div>*/}
@@ -86,10 +94,22 @@ function TodoList(props: PropsTodoListType) {
             <ul>
                 {tasksJSXElements}
             </ul>
-            <div>
-                <button className={allBtnClass} onClick={onClickSetAllFilter}>All</button>
-                <button className={activeBtnClass} onClick={onClickSetActiveFilter}>Active</button>
-                <button className={completedBtnClass} onClick={onClickSetCompletedFilter}>Completed</button>
+            <div className={"wrapforbut"}>
+                <Button
+                    variant={props.filter === "all" ? "contained" : "outlined"}
+                    color={"primary"}
+                    size={"small"}
+                    onClick={onClickSetAllFilter}>All</Button>
+                <Button style={{marginLeft: "10px"}}
+                        variant={props.filter === "active" ? "contained" : "outlined"}
+                        color={"primary"}
+                        size={"small"}
+                        onClick={onClickSetActiveFilter}>Active</Button>
+                <Button style={{marginLeft: "10px"}}
+                        variant={props.filter === "completed" ? "contained" : "outlined"}
+                        color={"primary"}
+                        size={"small"}
+                        onClick={onClickSetCompletedFilter}>Completed</Button>
             </div>
         </div>
     )
